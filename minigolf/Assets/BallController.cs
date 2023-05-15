@@ -10,11 +10,13 @@ public class BallController : MonoBehaviour
     [SerializeField] float force;
 
     bool shoot;
+    
 
     private void Update() {
         if(Input.GetMouseButtonDown(0))
         {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            Raycast ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out var hitInfo))
             {
